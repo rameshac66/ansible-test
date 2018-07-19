@@ -1,0 +1,9 @@
+---
+
+- hosts: local
+  become: yes
+
+  tasks:
+   - name: copying files using template module
+     template: src=/etc/ansible/playbooks/test/1.txt dest=/etc/ansible/playbooks/test1/
+

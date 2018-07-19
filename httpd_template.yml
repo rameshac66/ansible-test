@@ -1,0 +1,16 @@
+---
+- hosts: local
+  become: yes
+  vars:
+    - var1: httpd
+  tasks:
+    - name: Installing webserver 
+      yum: name={{ var1 }} state=installed
+  tasks:
+    - name: deploying files
+      template: src=/tmp/template.html dest=/var/www/html
+      notify:
+         - restart httpd
+  handlers:
+    - name: restart httpd
+      service: name={{ var1 }} state=restarted 

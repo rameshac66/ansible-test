@@ -1,0 +1,6 @@
+- hosts: all
+  become: yes
+
+  tasks:
+    - name: Installing / Removing httpd
+      yum: name=httpd state=installed

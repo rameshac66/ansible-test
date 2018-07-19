@@ -1,0 +1,11 @@
+- hosts: all
+  become: yes
+  vars:
+    name1: httpd
+    name2: git
+
+  tasks:
+    - name: Installing packages via variables
+      yum: name={{ name1 }} state=absent
+    - name: Installing git
+      yum: name={{ name2 }} state=installed

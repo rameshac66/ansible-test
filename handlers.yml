@@ -1,0 +1,13 @@
+- hosts: all
+  become: yes
+  vars_files:
+    - var1.yml
+
+  tasks:
+    - name: Installig ftpd
+      yum: name={{ name1 }} state=installed
+      notify:
+        - restart vsftpd
+  handlers:
+    - name: restart vsftpd
+      service: name=vsftpd state=started
