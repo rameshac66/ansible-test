@@ -1,0 +1,13 @@
+---
+
+- name: restart apache
+  service:
+     name: httpd
+     state: restarted
+  when: ansible_os_family=="RedHat"
+
+- name: restart apache
+  service:
+     name: apache2
+     status: restarted
+  when: ansible_os_family=="Debian"

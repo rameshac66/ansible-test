@@ -1,0 +1,6 @@
+---
+
+ - name: Deploying files
+   template:
+      src: test.html
+      dest: /var/www/html/
