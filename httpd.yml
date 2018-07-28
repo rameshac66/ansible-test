@@ -1,4 +1,5 @@
-- hosts: all
+---
+- hosts: ansible-node1
   become: yes
 
   tasks:
