@@ -3,7 +3,7 @@
   become: true
   tasks:
     - name: list of users 
-      user: name={{ item }} state=present
+      user: name={{ item }} state=absent
       with_items:
         - test1
         - test2
